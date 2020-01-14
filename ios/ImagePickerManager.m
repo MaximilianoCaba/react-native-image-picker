@@ -455,7 +455,7 @@ RCT_EXPORT_METHOD(showImagePicker:(NSDictionary *)options callback:(RCTResponseS
 
                 // Delete file if it already exists
                 if ([fileManager fileExistsAtPath:videoDestinationURL.path]) {
-                    [fileManager removeItemAtURL:videoDestinationURL error:nil];
+                    [fileManager copyItemAtURL:videoDestinationURL error:nil];
                 }
 
                 if (videoURL) { // Protect against reported crash
